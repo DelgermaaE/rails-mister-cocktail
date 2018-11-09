@@ -41,6 +41,7 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
+gem 'cloudinary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -66,3 +67,6 @@ gem 'rails-controller-testing', group: [ :test ]
 
 
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'carrierwave', '~> 1.2'
+gem 'rest-client', '~> 2.0', '>= 2.0.2'

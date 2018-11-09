@@ -20,17 +20,23 @@ class CocktailsController < ApplicationController
     end
   end
 
-  private
-
-  def cocktail_params
-    params.require(:cocktail).permit(:name)
-  end
-
   def update
     if @cocktail.update(cocktail_params)
       redirect_to cocktail_path(@cocktail)
     else
       render :edit
     end
+  end
+
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+    redirect_to cocktails_path
+  end
+
+  private
+
+  def cocktail_params
+    params.require(:cocktail).permit(:name, :photo)
   end
 end
